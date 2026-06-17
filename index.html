@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tactic Football 25</title>
+    <link rel="stylesheet" href="styles.css?v=button-routing-20260607" />
+  </head>
+  <body class="loading-view">
+    <main class="app-shell">
+      <header class="topbar fm-global-header">
+        <div class="fm-nav-controls" aria-label="Navigation">
+          <button onclick="state.activeView='menu'; render();" aria-label="Back to portal" type="button">‹</button>
+          <button onclick="state.activeView='match'; render();" aria-label="Forward to match day" type="button">›</button>
+        </div>
+        <div class="club-card">
+          <strong id="clubName">Arsenal</strong>
+        </div>
+        <div class="fm-section-title">
+          <h1 id="seasonLabel">Portal</h1>
+          <small id="weekLabel">Week 1</small>
+        </div>
+        <nav class="tabs" aria-label="Game sections">
+          <button data-view="menu" data-section="Portal" type="button">Portal</button>
+          <button data-view="squad" data-section="Squad" type="button">Squad</button>
+          <button data-view="transfers" data-section="Recruitment" type="button">Recruitment</button>
+          <button data-view="match" data-section="Match Day" type="button">Match Day</button>
+          <button data-view="clubInfo" data-section="Club" type="button">Club</button>
+          <button data-view="league" data-section="Career" type="button">Career</button>
+          <button data-ui-scale="true" data-icon="AA" type="button" aria-label="Change interface text size">UI Size</button>
+        </nav>
+        <div class="fm-header-tools">
+          <label class="fm-search-box">
+            <span>⌕</span>
+            <input id="globalSearchInput" type="search" placeholder="Search" />
+          </label>
+          <button onclick="state.activeView='inbox'; render();" aria-label="Open inbox" type="button">▰</button>
+          <button onclick="state.activeView='scouting'; render();" aria-label="Open scouting" type="button">◉</button>
+          <button onclick="state.activeView='clubInfo'; render();" aria-label="Open club settings" type="button">⚙</button>
+          <button class="fm-bookmark-trigger" onclick="toggleBookmarksModal()" type="button">Bookmarks⌄</button>
+          <div class="fm-date-chip">
+            <b id="chromeDateLabel">30/9/2025</b>
+            <span id="chromeTimeLabel">Tue 00:00</span>
+          </div>
+          <button class="fm-message-cta" onclick="state.activeView='inbox'; render();" type="button">Messages <b>»</b></button>
+        </div>
+      </header>
+
+      <nav class="fm-subnav" id="sectionSubnav" aria-label="Section navigation"></nav>
+
+      <section class="dashboard" aria-label="Club dashboard">
+        <article>
+          <span>Balance</span>
+          <strong id="balanceValue">$0m</strong>
+        </article>
+        <article>
+          <span>Wage Budget</span>
+          <strong id="wageValue">$0k/w</strong>
+        </article>
+        <article>
+          <span>Morale</span>
+          <strong id="moraleValue">0</strong>
+        </article>
+        <article>
+          <span>Next Match</span>
+          <strong id="fixtureValue">-</strong>
+        </article>
+      </section>
+
+      <section class="layout">
+        <div class="primary-panel" id="view"></div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <script src="script.js?v=button-routing-20260607"></script>
+  </body>
+</html>
